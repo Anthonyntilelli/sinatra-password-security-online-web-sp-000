@@ -67,5 +67,4 @@ class ApplicationController < Sinatra::Base
 			User.find(session[:id])
 		end
 	end
-
 end
