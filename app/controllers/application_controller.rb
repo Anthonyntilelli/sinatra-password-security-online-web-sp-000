@@ -26,6 +26,10 @@ class ApplicationController < Sinatra::Base
 		end
 	end
 
+	get "/login" do
+		erb :login
+	end
+
   post "/login" do
     user = User.find_by(:username => params[:username])
    
@@ -36,10 +40,6 @@ class ApplicationController < Sinatra::Base
       redirect "/failure"
     end
   end
-
-	get "/login" do
-		erb :login
-	end
 
 	get "/success" do
 		if logged_in?
